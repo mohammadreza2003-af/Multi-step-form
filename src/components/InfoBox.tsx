@@ -65,7 +65,7 @@ const InfoBox = () => {
     }
   });
 
-  const tempPlan: TypePickAdd = plans?.filter(
+  const tempPlan = plans?.filter(
     (item) => item.title.toLocaleLowerCase() === planType
   )[0];
   converStringToNumber(tempPlan?.duration ? tempPlan.duration : "");

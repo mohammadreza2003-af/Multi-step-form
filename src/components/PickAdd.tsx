@@ -27,7 +27,8 @@ const PickAdd = ({ pickStatus, setPickStatus }: TypePropsPickAdd) => {
     <div className="my-6">
       <ul className="flex sm:flex-col sm:gap-y-4">
         {listPickAdd.map((item) => {
-          const temp: boolean = pickStatus[item.type];
+          const tempP = item.type;
+          const temp: boolean = pickStatus[tempP];
           return (
             <li
               key={item.title}
