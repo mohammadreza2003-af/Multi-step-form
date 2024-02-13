@@ -24,9 +24,9 @@ const globalContext = createContext<TypeValue | undefined>(undefined);
 const reducer = (state: TypeinitailState, action: Action) => {
   switch (action.type) {
     case "FORWARDSTEP":
-      return { ...state, step: state.step++ };
+      return { ...state, step: state.step + 1 };
     case "BACKSTEP":
-      return { ...state, step: state.step-- };
+      return { ...state, step: state.step - 1 };
     case "CONFIRM": {
       return {
         ...state,

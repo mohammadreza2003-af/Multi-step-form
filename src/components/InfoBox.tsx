@@ -40,7 +40,6 @@ const InfoBox = () => {
       amonut += numberFromString;
     }
   };
-
   listPickAdd.map((item) => {
     switch (item.type) {
       case "CusomizableP":
@@ -71,7 +70,7 @@ const InfoBox = () => {
   converStringToNumber(tempPlan?.duration ? tempPlan.duration : "");
 
   const handleClickForwarStep = () => {
-    if (step >= 0 && step < 3) {
+    if (step >= 0 && step <= 3) {
       if (
         step === 0 &&
         user?.name.length > 0 &&
@@ -92,7 +91,6 @@ const InfoBox = () => {
   const handleClickBackStep = () => {
     dispatch({ type: "BACKSTEP" });
   };
-
   const handleConfirm = () => {
     const temp = {
       userInfo: user,
@@ -122,7 +120,6 @@ const InfoBox = () => {
             amonut={amonut}
           />
         )}
-
         <div className="flex justify-between items-center">
           <button
             onClick={handleClickBackStep}
@@ -132,10 +129,10 @@ const InfoBox = () => {
           </button>
           <button
             onClick={() => {
-              if (step !== 3) {
-                handleClickForwarStep();
-              } else {
+              if (step === 3) {
                 handleConfirm();
+              } else {
+                handleClickForwarStep();
               }
             }}
             className={`px-4 py-2 rounded-lg font-normal text-white ${
