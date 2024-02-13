@@ -27,8 +27,10 @@ const PickAdd = ({ pickStatus, setPickStatus }: TypePropsPickAdd) => {
     <div className="my-6">
       <ul className="flex sm:flex-col sm:gap-y-4">
         {listPickAdd.map((item) => {
-          const tempP = item.type;
-          const temp: boolean = pickStatus[tempP];
+          const tempP: string = item.type;
+          // eslint-disable-next-line
+          const temp: any = pickStatus[tempP];
+          console.log(temp);
           return (
             <li
               key={item.title}
